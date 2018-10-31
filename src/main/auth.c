@@ -532,6 +532,7 @@ autz_redo:
 				 module_msg->vp_strvalue);
 			rad_authlog(msg,request,0);
 		} else {
+            rad_postauth(request);
 			rad_authlog("Invalid user", request, 0);
 		}
 		request->reply->code = PW_CODE_ACCESS_REJECT;
