@@ -396,8 +396,10 @@ int rad_postauth(REQUEST *request)
 			snprintf(msg, sizeof(msg), "Login incorrect (%s)",
 				 vp->vp_strvalue);
 			rad_authlog(msg, request, 0);
+        /* DAW - Eliminate redundant or unwanted failure/reject messages
 		} else {
 			rad_authlog("Login incorrect", request, 0);
+        */
 		}
 	}
 
